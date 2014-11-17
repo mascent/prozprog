@@ -1,3 +1,8 @@
+/*Originial provied by mascent
+
+textbased implimentation of minesweeper not finished yet
+*/
+
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
