@@ -213,6 +213,9 @@ int game_loop(void){
 					set_flag(mem_x, mem_y);
 				}
 				//printf("%d\t%d\n", mem_y, mem_x);
+			} else if (input[0] == quit[0])
+			{
+				printf("Danke fürs spielen einen schönen Tag noch!\n");
 			} else {
 				printf("Die Eingabe war fehlerhaft!\n");
 			}
