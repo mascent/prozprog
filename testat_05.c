@@ -113,6 +113,12 @@ int print_field(void){
 		}
 		printf("\n");
 	}
+	printf("\n");
+	for (int i = 3; i < fields_x; ++i)
+	{
+		printf("\t");
+	}
+	printf("Minen verbleibend | %d |\n", bomb_n - flag);
 }
 
 int open_field(int x, int y){
