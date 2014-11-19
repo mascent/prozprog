@@ -149,6 +149,19 @@ int open_field(int x, int y){
 	return 0;
 }
 
+int open_mines (void){
+	for (int i = 0; i < fields_y; ++i)
+	{
+		for (int j = 0; j < fields_x; ++j)
+		{
+			if (field_value[i][j] == -10)
+			{
+				open_field(j, i);
+			}
+		}
+	}
+}
+
 int set_flag (int x, int y){
 	int help;
 	if (field_value[y][x] < 0 && field_value[y][x] > -12)
@@ -217,6 +230,7 @@ int game_loop(void){
 			{
 				printf("Danke fürs spielen einen schönen Tag noch!\n");
 			} else {
+				open_mines();
 				printf("Die Eingabe war fehlerhaft!\n");
 			}
 
