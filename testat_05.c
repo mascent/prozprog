@@ -17,9 +17,10 @@ textbased implimentation of minesweeper
 #define KCYN "\x1B[36m"
 #define KWHT "\x1B[37m"
 
-#define fields_x 9
-#define fields_y 9
+#define fields_x 8
+#define fields_y 8
 
+char color[7][9] = {"\x1B[31m", "\x1B[32m", "\x1B[33m", "\x1B[34m", "\x1B[35m", "\x1B[36m", "\x1B[37m"};
 
 char zuordnung[16] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p'};
 int field_value[fields_y][fields_x];
@@ -101,13 +102,13 @@ int print_field(void){
 					printf(KMAG "X\t" KNRM);
 				}else if (field_value[i][j] == 11)
 				{
-					printf(KBLU ".\t" KNRM);
+					printf(".\t" KNRM);
 				}
 				else if (field_value[i][j] < -11) {
 					printf("[F]\t");
 				}
 				else {
-					printf("%d\t", field_value[i][j]);
+					printf("%s%d\t"KNRM, color[field_value[i][j]], field_value[i][j]);
 				}
 		}
 		printf("\n");
@@ -232,7 +233,7 @@ int game_loop(void){
 }
 
 int main(void){	
-	bomb_n = 8;//Anzahl der Bomben
+	bomb_n = 10;//Anzahl der Bomben
 
 	initial_field();
 	generate_mines(bomb_n);
