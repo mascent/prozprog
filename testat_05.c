@@ -276,10 +276,14 @@ int input_func(void){
 		}
 		i++;
 	} while (input_char != '\n' and i < 5);
-	if (i == 5)
+	if (i > 5)
 	{
 		clean_stdin();
+	}else if (i == 5){
+		printf("Bitte drücke Enter\n");
+		clean_stdin();
 	}
+
 
 	if (input[0] == '\n' or input[0] == 0){							//Fehler wenn die erste Stelle eine Leerausgabe ist
 		printf("Bitte mache eine gültige Eingabe\n");
