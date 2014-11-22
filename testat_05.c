@@ -279,9 +279,6 @@ int input_func(void){
 	if (i > 5)
 	{
 		clean_stdin();
-	}else if (i == 5){
-		printf("Bitte drücke Enter\n");
-		clean_stdin();
 	}
 
 
